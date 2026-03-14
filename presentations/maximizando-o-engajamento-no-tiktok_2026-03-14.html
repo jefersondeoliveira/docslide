@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ analysis.title }}</title>
+  <title>Maximizando o Engajamento no TikTok</title>
 
   <!-- Reveal.js -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
@@ -13,8 +13,8 @@
   <style>
     /* ── CSS variables injected from analysis ── */
     :root {
-      --bg: {{ analysis.background_color }};
-      --accent: {{ analysis.accent_color }};
+      --bg: gradient;
+      --accent: #FF5733;
       --accent-dim: color-mix(in srgb, var(--accent) 40%, transparent);
       --text: #f0f0f0;
       --text-muted: #a0a8b8;
@@ -34,17 +34,12 @@
     }
 
     /* ── Reveal root ── */
-    {% if analysis.background_color == "gradient" %}
+    
     .reveal {
       background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
       color: var(--text);
     }
-    {% else %}
-    .reveal {
-      background: var(--bg);
-      color: var(--text);
-    }
-    {% endif %}
+    
 
     /* ── Typography ── */
     .reveal h1,
@@ -304,57 +299,128 @@
 <div class="reveal">
   <div class="slides">
 
-    {% for slide in outline.slides %}
+    
 
-    {% if slide.type == "title" %}
+    
     <section data-type="title">
-      <h1>{{ slide.title }}</h1>
-      {% if slide.subtitle %}<p class="subtitle">{{ slide.subtitle }}</p>{% endif %}
+      <h1>Maximizando o Engajamento no TikTok</h1>
+      <p class="subtitle">Estratégias de Postagem para 2026 no Brasil},{</p>
       <div class="accent-line"></div>
     </section>
 
-    {% elif slide.type == "content" %}
+    
+
+    
+
+    
     <section data-type="content">
-      <h2>{{ slide.title }}</h2>
-      {% if slide.bullets %}
+      <h2>Análise de Engajamento por Dias e Horários</h2>
+      
       <ul>
-        {% for bullet in slide.bullets %}<li>{{ bullet }}</li>{% endfor %}
+        <li>Quinta-feira é o melhor dia para postagem.</li><li>Pico de engajamento ocorre entre 15h e 19h.</li><li>Sábados e Domingos também são promissores.</li>
       </ul>
-      {% endif %}
+      
     </section>
 
-    {% elif slide.type == "two-column" %}
-    <section data-type="two-column">
-      <h2>{{ slide.title }}</h2>
-      <div class="two-col">
-        <div class="col-left">
-          {% if slide.left_title %}<h3>{{ slide.left_title }}</h3>{% endif %}
-          <ul>{% for b in slide.left_bullets %}<li>{{ b }}</li>{% endfor %}</ul>
-        </div>
-        <div class="col-right">
-          {% if slide.right_title %}<h3>{{ slide.right_title }}</h3>{% endif %}
-          <ul>{% for b in slide.right_bullets %}<li>{{ b }}</li>{% endfor %}</ul>
-        </div>
-      </div>
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Recomendações Baseadas em Métricas do TikTok</h2>
+      
+      <ul>
+        <li>Use o painel de análise para monitorar seguidores.</li><li>Identifique quando sua audiência está ativa.</li><li>Ajuste os horários com base nas suas métricas.</li>
+      </ul>
+      
     </section>
 
-    {% elif slide.type == "code" %}
-    <section data-type="code">
-      <h2>{{ slide.title }}</h2>
-      <pre><code class="language-{{ slide.language or 'plaintext' }}" data-trim>{{ slide.code }}</code></pre>
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Importância da Consistência nas Postagens</h2>
+      
+      <ul>
+        <li>A constância é mais importante que o horário exato.</li><li>Postagens regulares mantêm o público engajado.</li><li>Estabeleça um cronograma e siga-o.</li>
+      </ul>
+      
     </section>
 
-    {% elif slide.type == "closing" %}
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Dicas para Ajustar Horários de Postagem</h2>
+      
+      <ul>
+        <li>Experimente diferentes horários para ver resultados.</li><li>Monitore o desempenho de cada postagem.</li><li>Use feedback para aprimorar estratégias.</li>
+      </ul>
+      
+    </section>
+
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Impacto da Qualidade do Conteúdo no Engajamento</h2>
+      
+      <ul>
+        <li>Conteúdo de qualidade é priorizado pelo algoritmo.</li><li>Vídeos bons podem viralizar a qualquer hora.</li><li>Foque em retenção e interação.</li>
+      </ul>
+      
+    </section>
+
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Pico de Engajamento aos Fins de Semana</h2>
+      
+      <ul>
+        <li>Postagens no fim de semana recebem mais atenção.</li><li>Horários ideais são das 11h às 20h.</li><li>Explore esses horários para engajamento máximo.</li>
+      </ul>
+      
+    </section>
+
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Estratégias de Teste de Horários de Postagem</h2>
+      
+      <ul>
+        <li>Realize testes A/B com horários variáveis.</li><li>Compare resultados para encontrar o melhor horário.</li><li>Ajuste continuamente com base na performance.</li>
+      </ul>
+      
+    </section>
+
+    
+
+    
+
+    
     <section data-type="closing">
       <div class="closing-content">
-        {% if slide.message %}<h2 class="closing-message">{{ slide.message }}</h2>{% endif %}
-        {% if slide.submessage %}<p class="closing-sub">{{ slide.submessage }}</p>{% endif %}
+        <h2 class="closing-message">Explore e ajuste seus horários de postagem!</h2>
+        <p class="closing-sub">Obrigado!</p>
       </div>
     </section>
 
-    {% endif %}
+    
 
-    {% endfor %}
+    
 
   </div>
 </div>

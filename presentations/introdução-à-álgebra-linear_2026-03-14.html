@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ analysis.title }}</title>
+  <title>Introdução à Álgebra Linear</title>
 
   <!-- Reveal.js -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
@@ -13,8 +13,8 @@
   <style>
     /* ── CSS variables injected from analysis ── */
     :root {
-      --bg: {{ analysis.background_color }};
-      --accent: {{ analysis.accent_color }};
+      --bg: #0d1117;
+      --accent: #ffcc00;
       --accent-dim: color-mix(in srgb, var(--accent) 40%, transparent);
       --text: #f0f0f0;
       --text-muted: #a0a8b8;
@@ -34,17 +34,12 @@
     }
 
     /* ── Reveal root ── */
-    {% if analysis.background_color == "gradient" %}
-    .reveal {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-      color: var(--text);
-    }
-    {% else %}
+    
     .reveal {
       background: var(--bg);
       color: var(--text);
     }
-    {% endif %}
+    
 
     /* ── Typography ── */
     .reveal h1,
@@ -304,57 +299,170 @@
 <div class="reveal">
   <div class="slides">
 
-    {% for slide in outline.slides %}
+    
 
-    {% if slide.type == "title" %}
+    
     <section data-type="title">
-      <h1>{{ slide.title }}</h1>
-      {% if slide.subtitle %}<p class="subtitle">{{ slide.subtitle }}</p>{% endif %}
+      <h1>Introdução à Álgebra Linear</h1>
+      <p class="subtitle">Fundamentos e Aplicações.</p>
       <div class="accent-line"></div>
     </section>
 
-    {% elif slide.type == "content" %}
+    
+
+    
+
+    
     <section data-type="content">
-      <h2>{{ slide.title }}</h2>
-      {% if slide.bullets %}
+      <h2>Fundamentos da Álgebra Linear</h2>
+      
       <ul>
-        {% for bullet in slide.bullets %}<li>{{ bullet }}</li>{% endfor %}
+        <li>Estudo de vetores e operações.</li><li>Importância das matrizes e determinantes.</li><li>Sistemas de equações lineares.</li>
       </ul>
-      {% endif %}
+      
     </section>
 
-    {% elif slide.type == "two-column" %}
-    <section data-type="two-column">
-      <h2>{{ slide.title }}</h2>
-      <div class="two-col">
-        <div class="col-left">
-          {% if slide.left_title %}<h3>{{ slide.left_title }}</h3>{% endif %}
-          <ul>{% for b in slide.left_bullets %}<li>{{ b }}</li>{% endfor %}</ul>
-        </div>
-        <div class="col-right">
-          {% if slide.right_title %}<h3>{{ slide.right_title }}</h3>{% endif %}
-          <ul>{% for b in slide.right_bullets %}<li>{{ b }}</li>{% endfor %}</ul>
-        </div>
-      </div>
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Matrizes e Determinantes</h2>
+      
+      <ul>
+        <li>Conceitos de matrizes e suas operações.</li><li>Determinantes e suas propriedades.</li><li>Cálculo de matrizes inversas.</li>
+      </ul>
+      
     </section>
 
-    {% elif slide.type == "code" %}
-    <section data-type="code">
-      <h2>{{ slide.title }}</h2>
-      <pre><code class="language-{{ slide.language or 'plaintext' }}" data-trim>{{ slide.code }}</code></pre>
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Sistemas de Equações Lineares</h2>
+      
+      <ul>
+        <li>Definição de sistemas lineares.</li><li>Métodos de resolução: Substituição e Eliminação.</li><li>Critérios de compatibilidade.</li>
+      </ul>
+      
     </section>
 
-    {% elif slide.type == "closing" %}
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Espaços Vetoriais</h2>
+      
+      <ul>
+        <li>Definição e propriedades.</li><li>Conceito de subespaço vetorial.</li><li>Dependência e independência linear.</li>
+      </ul>
+      
+    </section>
+
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Transformações Lineares</h2>
+      
+      <ul>
+        <li>Definição de transformação linear.</li><li>Propriedades e exemplos.</li><li>Aplicações em diferentes áreas.</li>
+      </ul>
+      
+    </section>
+
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Autovalores e Autovetores</h2>
+      
+      <ul>
+        <li>Definição e significados.</li><li>Cálculo de autovalores.</li><li>Autovetores correspondentes.</li>
+      </ul>
+      
+    </section>
+
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Diagonalização de Operadores</h2>
+      
+      <ul>
+        <li>Condições para diagonalização.</li><li>Exemplos práticos.</li><li>Importância em álgebra linear.</li>
+      </ul>
+      
+    </section>
+
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Produto Interno e Normas</h2>
+      
+      <ul>
+        <li>Definição de produto interno.</li><li>Relação com normas em vetores.</li><li>Exemplos de produtos internos.</li>
+      </ul>
+      
+    </section>
+
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Ortogonalidade e Projeções</h2>
+      
+      <ul>
+        <li>Conceitos de vetores ortogonais.</li><li>Projeção de vetores em um espaço.</li><li>Exemplos práticos de ortogonalidade.</li>
+      </ul>
+      
+    </section>
+
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Processo de Gram-Schmidt</h2>
+      
+      <ul>
+        <li>Método de ortogonalização.</li><li>Aplicações de Gram-Schmidt.</li><li>Exemplos práticos.</li>
+      </ul>
+      
+    </section>
+
+    
+
+    
+
+    
     <section data-type="closing">
       <div class="closing-content">
-        {% if slide.message %}<h2 class="closing-message">{{ slide.message }}</h2>{% endif %}
-        {% if slide.submessage %}<p class="closing-sub">{{ slide.submessage }}</p>{% endif %}
+        <h2 class="closing-message">Conclua seu aprendizado em álgebra linear.</h2>
+        <p class="closing-sub">Obrigado por sua atenção.</p>
       </div>
     </section>
 
-    {% endif %}
+    
 
-    {% endfor %}
+    
 
   </div>
 </div>

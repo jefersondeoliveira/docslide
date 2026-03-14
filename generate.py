@@ -1,6 +1,9 @@
 import argparse
 import os
+import re
 import sys
+from datetime import date
+from pathlib import Path
 
 import openai
 from dotenv import load_dotenv
@@ -25,7 +28,6 @@ def main() -> None:
         sys.exit(1)
 
     folder_path = args.folder
-    output_path = "presentation.html"
 
     try:
         console.print("[bold cyan]Step 1/4:[/bold cyan] Extracting documents...")
@@ -36,6 +38,13 @@ def main() -> None:
 
         console.print("[bold cyan]Step 3/4:[/bold cyan] Generating outline...")
         outline = outliner.generate(corpus_text, analysis)
+
+        # Build output path: presentations/<slug>_<YYYY-MM-DD>.html
+        presentations_dir = Path("presentations")
+        presentations_dir.mkdir(exist_ok=True)
+        slug = re.sub(r"[^\w]+", "-", analysis.title.lower()).strip("-")
+        today = date.today().isoformat()
+        output_path = str(presentations_dir / f"{slug}_{today}.html")
 
         console.print("[bold cyan]Step 4/4:[/bold cyan] Rendering HTML...")
         renderer.render(analysis, outline, output_path)

@@ -11,9 +11,6 @@ TOKEN_THRESHOLD = 80_000
 
 console = Console()
 
-client = openai.OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-model = os.environ.get("OPENAI_MODEL", "gpt-4o")
-
 ANALYSIS_SYSTEM_PROMPT = """\
 You are an expert presentation designer. Analyze the provided document corpus and return a structured \
 analysis that will drive slide generation.
@@ -42,6 +39,8 @@ The summary should be comprehensive yet concise — aim for roughly 400-500 toke
 
 def _call_parse(response_format, messages):
     """Call the OpenAI structured output endpoint, retrying once on RateLimitError."""
+    client = openai.OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+    model = os.environ.get("OPENAI_MODEL", "gpt-4o")
     try:
         response = client.beta.chat.completions.parse(
             model=model,
