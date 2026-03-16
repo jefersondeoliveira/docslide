@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maximizando o Engajamento no TikTok</title>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <!-- Reveal.js highlight plugin -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+
+  <style>
+    /* ── CSS variables injected from analysis ── */
+    :root {
+      --bg: gradient;
+      --accent: #FF5733;
+      --accent-dim: color-mix(in srgb, var(--accent) 40%, transparent);
+      --text: #f0f0f0;
+      --text-muted: #a0a8b8;
+      --surface: rgba(255, 255, 255, 0.05);
+      --surface-border: rgba(255, 255, 255, 0.1);
+      --radius: 8px;
+    }
+
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    /* ── Reveal root ── */
+    
+    .reveal {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      color: var(--text);
+    }
+    
+
+    /* ── Typography ── */
+    .reveal h1,
+    .reveal h2,
+    .reveal h3 {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      text-transform: none;
+      margin: 0 0 0.5em;
+    }
+
+    .reveal h1 { font-size: 2.8em; }
+    .reveal h2 { font-size: 1.8em; }
+    .reveal h3 { font-size: 1.25em; color: var(--text); font-weight: 600; }
+
+    .reveal p {
+      color: var(--text-muted);
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin: 0.5em 0;
+    }
+
+    /* ── Sections (slides) ── */
+    .reveal .slides section {
+      padding: 2.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100%;
+      text-align: left;
+    }
+
+    /* ── Title slide ── */
+    .reveal section[data-type="title"] {
+      align-items: center;
+      text-align: center;
+    }
+
+    .reveal section[data-type="title"] h1 {
+      font-size: 3em;
+      margin-bottom: 0.3em;
+    }
+
+    .reveal section[data-type="title"] .subtitle {
+      font-size: 1.25em;
+      color: var(--text-muted);
+      margin-bottom: 1.5em;
+      max-width: 700px;
+    }
+
+    .accent-line {
+      width: 120px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin: 0 auto;
+      transform-origin: left center;
+    }
+
+    /* ── Content slide ── */
+    .reveal section[data-type="content"] h2 {
+      margin-bottom: 0.75em;
+      padding-bottom: 0.4em;
+      border-bottom: 2px solid var(--surface-border);
+      width: 100%;
+    }
+
+    .reveal ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+
+    .reveal ul li {
+      position: relative;
+      padding: 0.55em 0.75em 0.55em 1.6em;
+      margin-bottom: 0.4em;
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      color: var(--text);
+      font-size: 1em;
+      line-height: 1.5;
+    }
+
+    .reveal ul li::before {
+      content: '›';
+      position: absolute;
+      left: 0.5em;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* ── Two-column slide ── */
+    .reveal section[data-type="two-column"] h2 {
+      margin-bottom: 0.75em;
+      padding-bottom: 0.4em;
+      border-bottom: 2px solid var(--surface-border);
+      width: 100%;
+    }
+
+    .two-col {
+      display: flex;
+      gap: 2rem;
+      width: 100%;
+      flex: 1;
+      align-items: flex-start;
+    }
+
+    .col-left,
+    .col-right {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .col-left h3,
+    .col-right h3 {
+      color: var(--accent);
+      font-size: 1.1em;
+      margin-bottom: 0.6em;
+      padding-bottom: 0.3em;
+      border-bottom: 1px solid var(--surface-border);
+    }
+
+    .col-left ul li,
+    .col-right ul li {
+      font-size: 0.9em;
+    }
+
+    /* ── Code slide ── */
+    .reveal section[data-type="code"] h2 {
+      margin-bottom: 0.75em;
+      padding-bottom: 0.4em;
+      border-bottom: 2px solid var(--surface-border);
+      width: 100%;
+    }
+
+    .reveal pre {
+      width: 100%;
+      margin: 0;
+      border-radius: var(--radius);
+      border: 1px solid var(--surface-border);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+    }
+
+    .reveal pre code {
+      padding: 1.5em !important;
+      font-size: 0.8em !important;
+      line-height: 1.6 !important;
+      font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+      max-height: 480px;
+      overflow-y: auto;
+      display: block;
+    }
+
+    /* ── Closing slide ── */
+    .reveal section[data-type="closing"] {
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .closing-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
+    }
+
+    .closing-message {
+      font-size: 2.2em;
+      color: var(--accent);
+      margin: 0;
+    }
+
+    .closing-sub {
+      font-size: 1.15em;
+      color: var(--text-muted);
+      margin: 0;
+      max-width: 600px;
+    }
+
+    /* ── Fullscreen button ── */
+    #fullscreen-btn {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid var(--surface-border);
+      color: var(--text-muted);
+      border-radius: var(--radius);
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      backdrop-filter: blur(4px);
+    }
+    #fullscreen-btn:hover {
+      background: rgba(0, 0, 0, 0.7);
+      color: var(--accent);
+    }
+    #fullscreen-btn svg { width: 18px; height: 18px; fill: currentColor; }
+
+    /* ── Reveal.js UI overrides ── */
+    .reveal .controls {
+      color: var(--accent);
+    }
+
+    .reveal .progress {
+      background: rgba(255, 255, 255, 0.1);
+      height: 3px;
+    }
+
+    .reveal .progress span {
+      background: var(--accent);
+      transition: width 0.4s ease;
+    }
+
+    .reveal .slide-number {
+      background: rgba(0, 0, 0, 0.4);
+      color: var(--text-muted);
+      font-size: 0.75em;
+      border-radius: var(--radius);
+      padding: 2px 6px;
+    }
+
+    /* ── Scrollbar styling ── */
+    .reveal pre code::-webkit-scrollbar {
+      height: 5px;
+      width: 5px;
+    }
+    .reveal pre code::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.05);
+    }
+    .reveal pre code::-webkit-scrollbar-thumb {
+      background: var(--accent-dim);
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<button id="fullscreen-btn" title="Toggle fullscreen" onclick="toggleFullscreen()">
+  <svg id="fs-icon-enter" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+  <svg id="fs-icon-exit" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display:none"><path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"/></svg>
+</button>
+
+<div class="reveal">
+  <div class="slides">
+
+    
+
+    
+    <section data-type="title">
+      <h1>Maximizando o Engajamento no TikTok</h1>
+      <p class="subtitle">Estratégias de Postagem para 2026 no Brasil},{</p>
+      <div class="accent-line"></div>
+    </section>
+
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Análise de Engajamento por Dias e Horários</h2>
+      
+      <ul>
+        <li>Quinta-feira é o melhor dia para postagem.</li><li>Pico de engajamento ocorre entre 15h e 19h.</li><li>Sábados e Domingos também são promissores.</li>
+      </ul>
+      
+    </section>
+
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Recomendações Baseadas em Métricas do TikTok</h2>
+      
+      <ul>
+        <li>Use o painel de análise para monitorar seguidores.</li><li>Identifique quando sua audiência está ativa.</li><li>Ajuste os horários com base nas suas métricas.</li>
+      </ul>
+      
+    </section>
+
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Importância da Consistência nas Postagens</h2>
+      
+      <ul>
+        <li>A constância é mais importante que o horário exato.</li><li>Postagens regulares mantêm o público engajado.</li><li>Estabeleça um cronograma e siga-o.</li>
+      </ul>
+      
+    </section>
+
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Dicas para Ajustar Horários de Postagem</h2>
+      
+      <ul>
+        <li>Experimente diferentes horários para ver resultados.</li><li>Monitore o desempenho de cada postagem.</li><li>Use feedback para aprimorar estratégias.</li>
+      </ul>
+      
+    </section>
+
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Impacto da Qualidade do Conteúdo no Engajamento</h2>
+      
+      <ul>
+        <li>Conteúdo de qualidade é priorizado pelo algoritmo.</li><li>Vídeos bons podem viralizar a qualquer hora.</li><li>Foque em retenção e interação.</li>
+      </ul>
+      
+    </section>
+
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Pico de Engajamento aos Fins de Semana</h2>
+      
+      <ul>
+        <li>Postagens no fim de semana recebem mais atenção.</li><li>Horários ideais são das 11h às 20h.</li><li>Explore esses horários para engajamento máximo.</li>
+      </ul>
+      
+    </section>
+
+    
+
+    
+
+    
+    <section data-type="content">
+      <h2>Estratégias de Teste de Horários de Postagem</h2>
+      
+      <ul>
+        <li>Realize testes A/B com horários variáveis.</li><li>Compare resultados para encontrar o melhor horário.</li><li>Ajuste continuamente com base na performance.</li>
+      </ul>
+      
+    </section>
+
+    
+
+    
+
+    
+    <section data-type="closing">
+      <div class="closing-content">
+        <h2 class="closing-message">Explore e ajuste seus horários de postagem!</h2>
+        <p class="closing-sub">Obrigado!</p>
+      </div>
+    </section>
+
+    
+
+    
+
+  </div>
+</div>
+
+<!-- Reveal.js -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<!-- Reveal.js highlight plugin (bundled) -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script>
+  // ── Reveal.js initialization ──
+  Reveal.initialize({
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    controls: true,
+    progress: true,
+    slideNumber: true,
+    keyboard: true,
+    touch: true,
+    hash: true,
+    plugins: [RevealHighlight]
+  });
+
+  // ── GSAP slide animations ──
+  Reveal.on('slidechanged', function(event) {
+    gsap.killTweensOf("*");
+    const slide = event.currentSlide;
+    const type = slide.dataset.type;
+
+    if (type === 'title') {
+      // h1: y:60→0 + fade (0.7s). Subtitle: fade at 0.3s delay. Accent line: scaleX:0→1
+      gsap.from(slide.querySelector('h1'), { y: 60, opacity: 0, duration: 0.7, ease: 'power3.out' });
+      const sub = slide.querySelector('.subtitle');
+      if (sub) gsap.from(sub, { opacity: 0, duration: 0.5, delay: 0.3, ease: 'power2.out' });
+      const line = slide.querySelector('.accent-line');
+      if (line) gsap.from(line, { scaleX: 0, duration: 0.5, delay: 0.2, transformOrigin: 'left', ease: 'power2.out' });
+
+    } else if (type === 'content') {
+      // Title: x:-40→0. Bullets stagger in (y:20→0 + fade, 0.1s stagger)
+      gsap.from(slide.querySelector('h2'), { x: -40, opacity: 0, duration: 0.5, ease: 'power3.out' });
+      const items = slide.querySelectorAll('li');
+      if (items.length) gsap.from(items, { y: 20, opacity: 0, stagger: 0.1, duration: 0.4, delay: 0.2, ease: 'power2.out' });
+
+    } else if (type === 'two-column') {
+      // Left: x:-40→0. Right: x:40→0. Simultaneous.
+      const left = slide.querySelector('.col-left');
+      const right = slide.querySelector('.col-right');
+      if (left) gsap.from(left, { x: -40, opacity: 0, duration: 0.5, ease: 'power3.out' });
+      if (right) gsap.from(right, { x: 40, opacity: 0, duration: 0.5, ease: 'power3.out' });
+
+    } else if (type === 'code') {
+      // Code block: clip-path reveal from top over 0.6s
+      const pre = slide.querySelector('pre');
+      if (pre) gsap.from(pre, { clipPath: 'inset(100% 0 0 0)', duration: 0.6, ease: 'power2.out' });
+
+    } else if (type === 'closing') {
+      // Center: scale 0.8→1.0 + fade, then gentle pulse
+      const content = slide.querySelector('.closing-content');
+      if (content) {
+        gsap.from(content, {
+          scale: 0.8,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power3.out',
+          onComplete: () => {
+            gsap.to(content, { scale: 1.03, duration: 2, yoyo: true, repeat: -1, ease: 'sine.inOut' });
+          }
+        });
+      }
+    }
+  });
+
+  // ── Fullscreen toggle ──
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+  }
+  document.addEventListener('fullscreenchange', function() {
+    const isFs = !!document.fullscreenElement;
+    document.getElementById('fs-icon-enter').style.display = isFs ? 'none' : '';
+    document.getElementById('fs-icon-exit').style.display = isFs ? '' : 'none';
+  });
+
+  // ── Trigger animation for the first slide on ready ──
+  Reveal.on('ready', function(event) {
+    const slide = event.currentSlide;
+    const h1 = slide.querySelector('h1');
+    gsap.from(h1 || slide, { y: 60, opacity: 0, duration: 0.7, ease: 'power3.out' });
+    const sub = slide.querySelector('.subtitle');
+    if (sub) gsap.from(sub, { opacity: 0, duration: 0.5, delay: 0.3, ease: 'power2.out' });
+    const line = slide.querySelector('.accent-line');
+    if (line) gsap.from(line, { scaleX: 0, duration: 0.5, delay: 0.2, transformOrigin: 'left', ease: 'power2.out' });
+  });
+</script>
+
+</body>
+</html>
