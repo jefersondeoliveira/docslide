@@ -1,4 +1,4 @@
-# Presentation Generator
+# DocSlide
 
 Transforms a folder of documents into a polished, animated HTML presentation using AI. Drop in your Markdown, text, PDF, or DOCX files — get a ready-to-present slide deck.
 
